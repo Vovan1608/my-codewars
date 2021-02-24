@@ -16,27 +16,27 @@ const forbidden = "
 */
 
 function reverse(n) {
-	let numDigit = [];
-	
-	while(n > 0) {
-		numDigit[numDigit.length] = n % 10;
-		n = Math.floor(n / 10); 
-	}
-	let i = 0,
-			size = numDigit.length,
-			num = 0;
-	console.log(numDigit);
-	for(i; i < size; i += 1) {
-		num += numDigit[i] * (10 ** (size - i - 1));
-	}
-	return num;
+  let numDigit = [];
+
+  while (n > 0) {
+    numDigit[numDigit.length] = n % 10;
+    n = Math.floor(n / 10);
+  }
+  let i = 0,
+    size = numDigit.length,
+    num = 0;
+  console.log(numDigit);
+  for (i; i < size; i += 1) {
+    num += numDigit[i] * 10 ** (size - i - 1);
+  }
+  return num;
 }
 
 // function reverse(n){
 // 	let rev = 0;
 // 	while (n) {
 // 			rev = rev * 10 + n % 10;
-// 			n = Math.floor(n/10);
+// 			n = Math.floor(n / 10);
 // 	}
 // 	return rev;
 // }
