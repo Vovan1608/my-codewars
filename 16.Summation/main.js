@@ -10,3 +10,6 @@ summation(8) -> 36
 var summation = function (num) {
   // Code here
 };
+
+const res = summation(8);
+console.log(res);
