@@ -8,11 +8,13 @@ summation(8) -> 36
 */
 
 var summation = function (num) {
+  let result = 0;
   while (num > 0) {
-    num += num - 1;
+    result += num;
+    num -= 1;
   }
 
-  return num;
+  return result;
 };
 
 const res = summation(8);
