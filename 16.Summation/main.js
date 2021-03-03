@@ -9,7 +9,7 @@ summation(8) -> 36
 
 var summation = function (num) {
   let result = 0;
-  while (num > 0) {
+  while (num) {
     result += num;
     num -= 1;
   }
