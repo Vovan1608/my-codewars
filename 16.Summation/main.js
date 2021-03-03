@@ -11,5 +11,5 @@ var summation = function (num) {
   return (num * (num + 1)) / 2;
 };
 
-const res = summation(8);
+const res = summation(6);
 console.log(res);
