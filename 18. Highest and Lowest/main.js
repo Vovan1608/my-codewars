@@ -10,9 +10,7 @@ highAndLow("1 9 3 4 -5"); // return "9 -5"
 
 function highAndLow(numbers) {
   const num = numbers.split(" ");
-  const max = Math.max(...num);
-  const min = Math.min(...num);
-  return `${max} ${min}`;
+  return `${Math.max(...num)} ${Math.min(...num)}`;
 }
 
 const res = highAndLow("1 9 3 4 -5");
