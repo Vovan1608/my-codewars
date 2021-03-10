@@ -16,7 +16,7 @@ function highAndLow(numbers) {
 }
 
 const res = highAndLow("1 9 3 4 -5");
-console.log(res);
+
 const add = document.querySelector(".add");
 const div = document.createElement("div");
 div.innerText = res;
