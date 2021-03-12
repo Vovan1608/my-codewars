@@ -17,16 +17,14 @@ function cycle(n) {
     return -1;
   }
 
-  let shortestPeriodLength = 0;
-  const TEN = 10;
-  let dev = TEN;
-
-  while (dev % n !== 1) {
-    dev *= TEN;
-    shortestPeriodLength += 1;
+  let i = 0,
+    val = 1;
+  while (++i) {
+    val = (val * 10) % n;
+    if (val === 1) {
+      return i;
+    }
   }
-
-  return shortestPeriodLength + 1;
 }
 
 const res = cycle(197);
