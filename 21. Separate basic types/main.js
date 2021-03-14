@@ -14,3 +14,9 @@ expected output is:
   boolean: [false]
 }
 */
+
+function separateTypes(input) {}
+
+const input = ["a", 1, 2, false, "b"];
+const res = separateTypes(input);
+console.log(res);
