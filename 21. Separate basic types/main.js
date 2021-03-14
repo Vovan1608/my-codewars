@@ -15,7 +15,19 @@ expected output is:
 }
 */
 
-function separateTypes(input) {}
+function separateTypes(input) {
+  return input.reduce(
+    (obj, next) => {
+      obj[typeof next].push(next);
+      return obj;
+    },
+    {
+      number: [],
+      string: [],
+      boolean: [],
+    }
+  );
+}
 
 const input = ["a", 1, 2, false, "b"];
 const res = separateTypes(input);
