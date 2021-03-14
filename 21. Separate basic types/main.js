@@ -16,17 +16,16 @@ expected output is:
 */
 
 function separateTypes(input) {
-  return input.reduce(
-    (obj, next) => {
-      obj[typeof next].push(next);
-      return obj;
-    },
-    {
-      number: [],
-      string: [],
-      boolean: [],
+  const obj = {};
+  input.map((el) => {
+    if (typeof el in obj) {
+      obj[typeof el].push(el);
+    } else {
+      obj[typeof el] = [el];
     }
-  );
+  });
+
+  return obj;
 }
 
 const input = ["a", 1, 2, false, "b"];
