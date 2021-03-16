@@ -7,11 +7,22 @@ x = 'man i need a taxi up to ubud';// ['a', 'need', 'ubud', 'i', 'taxi', 'man', 
 function last(x) {
   return x
     .split(" ")
-    .sort((a, b) => a[a.length - 1] - b[b.length - 1])
+    .map((el) => [...el].reverse().join(""))
+    .sort((a, b) => {
+      if (a[0] > b[0]) {
+        return 1;
+      }
+      if (a[0] < b[0]) {
+        return -1;
+      }
+      return 0;
+    })
+    .map((el) => [...el].reverse().join(""))
     .join(" ");
 }
 
 const x = "man i need a taxi up to ubud";
+const y = "what time are we climbing up the volcano";
 const res = last(x);
 
 const add = document.querySelector(".add");
