@@ -5,7 +5,10 @@ x = 'man i need a taxi up to ubud';// ['a', 'need', 'ubud', 'i', 'taxi', 'man', 
 */
 
 function last(x) {
-  return x;
+  return x
+    .split(" ")
+    .sort((a, b) => a[a.length - 1] - b[b.length - 1])
+    .join(" ");
 }
 
 const x = "man i need a taxi up to ubud";
