@@ -8,17 +8,24 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar
 */
 
 function cakes(recipe, available) {
-  let possibility = 0;
+  let possibility = Number.MAX_SAFE_INTEGER;
 
   for (let item in available) {
-    possibility = item in recipe ? available[item] / recipe[item] : 0;
+    if (item in recipe) {
+      const temp = Math.floor(available[item] / recipe[item]);
+      console.log(temp);
+      possibility = possibility > temp ? temp : possibility;
+    }
   }
 
   return possibility;
 }
 
-const recipe = { flour: 500, sugar: 200, eggs: 1 };
-const available = { flour: 1200, sugar: 1200, eggs: 5, milk: 200 };
+// const recipe = { flour: 500, sugar: 200, eggs: 1 };
+// const available = { flour: 1200, sugar: 1200, eggs: 5, milk: 200 };
+
+const recipe = { apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100 };
+const available = { sugar: 500, flour: 2000, milk: 2000 };
 const res = cakes(recipe, available);
 
 const add = document.querySelector("#add");
