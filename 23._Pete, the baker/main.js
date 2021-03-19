@@ -8,7 +8,11 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar
 */
 
 function cakes(recipe, available) {
-  // TODO: insert code
+  const recipeAsArr = Object.entries(recipe);
+  for (let ing in available) {
+  }
+  console.log(recipeAsArr);
+  return recipeAsArr;
 }
 
 const recipe = { flour: 500, sugar: 200, eggs: 1 };
