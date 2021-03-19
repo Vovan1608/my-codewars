@@ -8,11 +8,13 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar
 */
 
 function cakes(recipe, available) {
-  const recipeAsArr = Object.entries(recipe);
-  for (let ing in available) {
+  let possibility = 0;
+
+  for (let item in available) {
+    possibility = item in recipe ? available[item] / recipe[item] : 0;
   }
-  console.log(recipeAsArr);
-  return recipeAsArr;
+
+  return possibility;
 }
 
 const recipe = { flour: 500, sugar: 200, eggs: 1 };
