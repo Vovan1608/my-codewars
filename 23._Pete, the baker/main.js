@@ -13,7 +13,6 @@ function cakes(recipe, available) {
   for (let item in recipe) {
     if (item in available) {
       const temp = Math.floor(available[item] / recipe[item]);
-      console.log(temp);
       possibility = possibility > temp ? temp : possibility;
     } else {
       return 0;
