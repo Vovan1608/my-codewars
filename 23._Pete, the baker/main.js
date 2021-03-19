@@ -10,11 +10,13 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar
 function cakes(recipe, available) {
   let possibility = Number.MAX_SAFE_INTEGER;
 
-  for (let item in available) {
-    if (item in recipe) {
+  for (let item in recipe) {
+    if (item in available) {
       const temp = Math.floor(available[item] / recipe[item]);
       console.log(temp);
       possibility = possibility > temp ? temp : possibility;
+    } else {
+      return 0;
     }
   }
 
