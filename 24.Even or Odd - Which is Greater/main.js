@@ -5,20 +5,17 @@
 */
 
 function evenOrOdd(str) {
-  let odd = 0;
-  let even = 0;
-  
-  [...str].forEach(el => {
-    el = Number(el);
-    el % 2 === 0 ? even += el : odd += el;
-  });
-  
-  if (odd > even) {
+  let diff = [...str].map(el => Number(el)).reduce((a, b) => b % 2 ? a - b : a + b, 0);
+
+  if (diff < 0) {
     return "Odd is greater than Even";
-  } else if (odd < even) {
-    return "Even is greater than Odd";
-  } else {
-    return "Even and Odd are the same";
   }
-  
+
+	if (diff > 0) {
+    return "Even is greater than Odd";
+  }
+
+  return "Even and Odd are the same";
 }
+
+const str = "12"; // -> 
