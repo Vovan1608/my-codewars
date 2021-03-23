@@ -1,9 +1,5 @@
 "use strict";
 
-/* 
-
-*/
-
 function evenOrOdd(str) {
   let diff = [...str]
     .map((el) => Number(el))
