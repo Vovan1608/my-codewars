@@ -71,7 +71,7 @@ const text = "The Sensei told me that i can do this kata";
 // const text = "The";
 
 const bits =
-  "100111111000111001000010000111111000000111001111000111110110111000010111";
+  "100111111000111001000010000111111000000111001111000111110110111000010111"; // "hey"
 
 const add = document.querySelector("#add");
 add.style = `
