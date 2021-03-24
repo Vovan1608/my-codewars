@@ -1,6 +1,6 @@
 "use strict";
 
-/* 
+/*
 Implement the encode function, using the following steps:
 
 convert every letter of the text to its ASCII value;
@@ -17,7 +17,9 @@ input: "hey"
 */
 
 function encode(text) {
-  return bits;
+  console.log([...text].map((el) => el.charCodeAt().toString(2)));
+  return [...text].map((el) => [...el.charCodeAt().toString(2)]);
+  // return bits;
 }
 
 function decode(bits) {
