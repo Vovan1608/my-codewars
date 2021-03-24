@@ -17,9 +17,15 @@ input: "hey"
 */
 
 function encode(text) {
-  console.log([...text].map((el) => el.charCodeAt().toString(2)));
-  return [...text].map((el) => [...el.charCodeAt().toString(2)]);
-  // return bits;
+  const bits = [...text]
+    .map((el) =>
+      [...("0" + el.charCodeAt().toString(2))]
+        .map((el) => el + el + el)
+        .join("")
+    )
+    .join("");
+  console.log(bits);
+  return bits;
 }
 
 function decode(bits) {
