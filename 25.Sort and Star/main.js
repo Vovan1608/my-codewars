@@ -7,8 +7,7 @@ You should not remove or add elements from/to the array.
 */
 
 function twoSort(s) {
-  // const firstEl = ;
-  return [...[...s].sort()[0]].join("***");
+  return [...s.sort()[0]].join("***");
 }
 
 const s = [
