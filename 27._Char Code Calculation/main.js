@@ -17,8 +17,13 @@ Then return the difference between the sum of the digits in total1 and total2:
 */
 
 function calc(x){
-  const total1 = getSum(doStringOfUNICode(x));
-  const total2 = getSum(doOneFromSeven(doStringOfUNICode(x)));
+  const total1 = compose(
+		doStringOfUNICode,
+		getSum)(x);
+  const total2 = compose(
+		doStringOfUNICode,
+		doOneFromSeven,
+		getSum)(x);
   return total1 - total2;
 }
 
@@ -26,7 +31,9 @@ const doStringOfUNICode = (str) => [...str].map(el => el.charCodeAt()).join("");
 
 const getSum = (str) => [...str].reduce( (sum, next) => Number(sum) + Number(next));
 
-const doOneFromSeven = (str) => [...str].map(el => el === 7 ? 1 : el).join("");
+const doOneFromSeven = (str) => [...str].map(el => Number(el) === 7 ? 1 : el).join("");
+
+const compose = (...functions) => args => functions.reduce((arg, fn) => fn(arg), args);
 
 const x = "ABC";
 
@@ -45,6 +52,6 @@ add.style = `
 `;
 
 const el = document.createElement("div");
-el.innerText = (doOneFromSeven(doStringOfUNICode(x)));
+el.innerText = calc(x);
 
 add.append(el);
